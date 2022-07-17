@@ -71,3 +71,12 @@ how to use sqlite_lib
 		Log.e("Data","deleted success");
 	}
 ```
+5. update data
+```
+    SqliteCreator mSqliteCreator = new SqliteCreator(context);
+    mSqliteCreator.init("news");
+    mSqliteCreator.addData("name", editTextTitle.getText().toString());
+    mSqliteCreator.addData("desc", editTextDescription.getText().toString());
+    int updateResult = mSqliteCreator.executeUpdate(String.valueOf(news_id));
+    Log.e("Data", "=>> update: " + updateResult + " Error: " + mSqliteCreator.getError());
+```
