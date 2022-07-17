@@ -1,6 +1,7 @@
 how to use sqlite_lib
 
 1.select data
+```
 		SqliteCreator mSqliteCreator = new SqliteCreator(mContext);
 		mSqliteCreator.init("user_data");
 		ArrayList<ContentValues> result = mSqliteCreator.excuteSelect();
@@ -13,8 +14,9 @@ how to use sqlite_lib
 			// get get integer
 			int s_day = row.getAsInteger("s_day");
 		}
-		
+```		
 2. select data with filter field
+```
 		// check data exist or not
 		SqliteCreator mSqliteCreator = new SqliteCreator(context);
 		mSqliteCreator.init("user_data");
@@ -26,8 +28,9 @@ how to use sqlite_lib
 		 	ContentValues row = result.get(i); 
 		 	Log.e("Data", "type: " + row.get("data_type") + " name: " + row.get("name")); 
 		 }
-
+```
 3.save data
+```
 	public void saveData(String dataName) {
 
 		// check data exist or not
@@ -56,8 +59,9 @@ how to use sqlite_lib
 		Log.e("Data", "Insert: " + result2);
 		Log.e("Data", "Error: " + mSqliteCreator.getError());
 	}
-	
+```	
 4. delete data
+```
 	// check data exist or not
 	SqliteCreator mSqliteCreator = new SqliteCreator(context);
 	mSqliteCreator.init("user_data");
@@ -66,3 +70,4 @@ how to use sqlite_lib
 	if (result){
 		Log.e("Data","deleted success");
 	}
+```
